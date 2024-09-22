@@ -114,3 +114,39 @@ a.nav-link {
     height: 300px;
   }
 }
+
+.nav-link {
+  color: gray;
+}
+
+.nav-link:hover {
+  color:  #6c757d; /* Cor do texto ao passar o mouse (exemplo: laranja) */
+}
+
+.navbar-brand {
+  color:  #6c757d;
+  font-size: 20px;
+  letter-spacing: 2px;
+  transition: color 0.3s ease; /* Adiciona uma transição suave */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+.navbar-brand:hover {
+  color: #0d6dfd54; /* Cor do texto ao passar o mouse (exemplo: laranja) */
+}
+.nav-link.active {
+  color: #0d6dfd54; /* Cor do texto quando o link está ativo */
+  background-color:  #6c757d; /* Cor de fundo quando o link está ativo */
+  border: 1px solid  #6c757d; /* Bordas quando o link está ativo */
+  border-radius: 4px; /* Deixe as bordas arredondadas, se desejar */
+}
+
+/* Quando o link está em foco ou é clicado */
+.nav-link:focus,
+.nav-link.active:focus,
+.nav-link:hover,
+.nav-link.active:hover {
+  color: black; /* Cor do texto ao passar o mouse ou focar */
+  background-color:  #6c757d; /* Cor de fundo quando o link está ativo */
+  border: 1px solid gray; /* Bordas ao passar o mouse ou focar */
+  border-radius: 4px; /* Bordas arredondadas */
+}

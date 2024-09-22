@@ -94,7 +94,7 @@
       <div class="mb-4">
         <!-- Esse Formulario nao esta salvando os dados mais funciona legal a formatação dos campos  -->
         <h4>Adicionar Novo Registro</h4>
-        <form id="add-form">
+        <form id="add-form" autocomplete="off">
           <div class="mb-3">
             <label for="data" class="form-label">Data</label>
             <input
@@ -107,12 +107,14 @@
           </div>
 
           <div class="mb-3">
-            <label for="valor" class="form-label">Valor</label>
+            <label for="valor" class="form-label" autocomplete="off"
+              >Valor</label
+            >
             <input type="text" id="valor" class="form-control" required />
           </div>
           <div class="mb-3">
             <label for="descricao" class="form-label">Descrição</label>
-            <input type="text" id="descricao" class="form-control" required />
+            <input type="text" id="descricao" class="form-control" required autocomplete="off"/>
           </div>
           <button type="submit" class="btn btn-primary">Adicionar</button>
         </form>

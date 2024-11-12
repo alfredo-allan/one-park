@@ -587,6 +587,8 @@
       }
       //gerar comprovante alvulso
       function gerarComprovanteClienteAvulso() {
+        const ComprovanteCliente =
+          document.getElementById("comprovanteAvulso").value;
         const nomeCliente = document.getElementById("clienteAvulso").value;
         const placaVeiculo = document.getElementById("placaAvulso").value;
         const veiculo = document.getElementById("veiculoAvulso").value;
@@ -599,6 +601,7 @@
 
         const comprovanteTxt =
           `Comprovante de Cliente Avulso\n\n` +
+          `Numero do Comprovante: ${ComprovanteCliente}\n` +
           `Nome do Cliente: ${nomeCliente}\n` +
           `Placa do Veículo: ${placaVeiculo}\n` +
           `Veículo: ${veiculo}\n` +

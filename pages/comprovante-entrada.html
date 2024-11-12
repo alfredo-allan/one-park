@@ -277,6 +277,8 @@
       //gerar comprovante alvulso
       function gerarComprovanteClienteAvulso() {
         // Obtém os valores dos campos do formulário
+        const ComprovanteCliente =
+          document.getElementById("comprovanteAvulso").value;
         const nomeCliente = document.getElementById("clienteAvulso").value;
         const placaVeiculo = document.getElementById("placaAvulso").value;
         const veiculo = document.getElementById("veiculoAvulso").value;
@@ -289,6 +291,7 @@
         // Cria o texto do comprovante
         const comprovanteTxt =
           `Comprovante de Cliente Avulso\n\n` +
+          `Numero do Comprovante: ${ComprovanteCliente}\n` +
           `Nome do Cliente: ${nomeCliente}\n` +
           `Placa do Veículo: ${placaVeiculo}\n` +
           `Veículo: ${veiculo}\n` +

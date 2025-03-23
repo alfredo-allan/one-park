@@ -1,6 +1,10 @@
 :root {
   font-family: "Roboto", sans-serif;
+  --dark-blue: #2a2e3bbf !important;
+  --logo-font: "Bebas Neue", sans-serif;
+  --purple-primary: #a33da3;
 }
+
 
 body {
   display: flex;
@@ -14,7 +18,8 @@ main {
 }
 
 footer {
-  background-color: #f8f9fa; /* Cor de fundo do footer */
+  background-color: #f8f9fa;
+  /* Cor de fundo do footer */
   width: 100%;
 }
 
@@ -22,8 +27,11 @@ footer {
   ul.dropdown-menu.show {
     margin: 9px -118px;
   }
+
   .custom-img {
-    width: 50%; /* Ajuste a largura conforme necessário */
+    width: 70%;
+    height: auto;
+    margin-left: 1%;
   }
 }
 
@@ -33,9 +41,12 @@ footer {
 
 .navbar-toggler {
   background-image: url("../img/ico-menu.png");
-  background-size: contain; /* Ajusta a imagem para caber no botão */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
-  background-position: center; /* Centraliza a imagem no botão */
+  background-size: contain;
+  /* Ajusta a imagem para caber no botão */
+  background-repeat: no-repeat;
+  /* Evita que a imagem se repita */
+  background-position: center;
+  /* Centraliza a imagem no botão */
   width: 40px;
   height: 40px;
   border: none;
@@ -48,6 +59,7 @@ a.navbar-brand {
 
 a.nav-link {
   font-weight: 700;
+
 }
 
 .input-group {
@@ -55,40 +67,54 @@ a.nav-link {
   display: flex;
   align-items: center;
 }
+
 .input-group {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 1rem; /* Espaçamento entre input e imagem */
-  width: 100%; /* Faz o container ocupar a largura total */
+  gap: 1rem;
+  /* Espaçamento entre input e imagem */
+  width: 100%;
+  /* Faz o container ocupar a largura total */
 }
+
 .input-group img {
-  max-width: 24px; /* Ajuste o tamanho dos ícones conforme necessário */
-  height: auto; /* Mantém a proporção da imagem */
+  max-width: 24px;
+  /* Ajuste o tamanho dos ícones conforme necessário */
+  height: auto;
+  /* Mantém a proporção da imagem */
 }
+
 .input-group input {
   flex: 1;
-  width: 100%; /* Faz o campo de input ocupar toda a largura disponível */
-  box-sizing: border-box; /* Inclui padding e borda na largura total */
+  width: 100%;
+  /* Faz o campo de input ocupar toda a largura disponível */
+  box-sizing: border-box;
+  /* Inclui padding e borda na largura total */
 }
+
 #cadastro,
 #cadastro-saida {
   padding: 1rem;
 }
 
 @media (min-width: 1200px) {
+
   #cadastro,
   #consultar,
   #clientes,
   #cadastro-saida {
     width: 60%;
   }
+
   button {
     width: 40%;
   }
+
   .btn-custom {
     width: 60%;
-    padding: 0.5rem 2rem; /* Ajuste o padding conforme necessário */
+    padding: 0.5rem 2rem;
+    /* Ajuste o padding conforme necessário */
   }
 }
 
@@ -99,6 +125,7 @@ a.nav-link {
 }
 
 @media (min-width: 1200px) {
+
   #btn-entrada,
   #btn-saida {
     margin: -15px 0px;
@@ -120,24 +147,35 @@ a.nav-link {
 }
 
 .nav-link:hover {
-  color:  #6c757d; /* Cor do texto ao passar o mouse (exemplo: laranja) */
+  color: #6c757d;
+  /* Cor do texto ao passar o mouse (exemplo: laranja) */
 }
 
 .navbar-brand {
-  color:  #6c757d;
-  font-size: 20px;
-  letter-spacing: 2px;
-  transition: color 0.3s ease; /* Adiciona uma transição suave */
-  text-decoration: none; /* Remove o sublinhado do link */
+  font-size: 25px !important;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  /* Adiciona uma transição suave */
+  text-decoration: none;
+  /* Remove o sublinhado do link */
+  font-family: var(--logo-font) !important;
+  color: var(--purple-primary) !important;
 }
+
 .navbar-brand:hover {
-  color: #0d6dfd54; /* Cor do texto ao passar o mouse (exemplo: laranja) */
+  color: #0d6dfd54;
+  /* Cor do texto ao passar o mouse (exemplo: laranja) */
 }
+
 .nav-link.active {
-  color: #0d6dfd54; /* Cor do texto quando o link está ativo */
-  background-color:  #6c757d; /* Cor de fundo quando o link está ativo */
-  border: 1px solid  #6c757d; /* Bordas quando o link está ativo */
-  border-radius: 4px; /* Deixe as bordas arredondadas, se desejar */
+  color: #0d6dfd54;
+  /* Cor do texto quando o link está ativo */
+  background-color: #6c757d;
+  /* Cor de fundo quando o link está ativo */
+  border: 1px solid #6c757d;
+  /* Bordas quando o link está ativo */
+  border-radius: 4px;
+  /* Deixe as bordas arredondadas, se desejar */
 }
 
 /* Quando o link está em foco ou é clicado */
@@ -145,8 +183,30 @@ a.nav-link {
 .nav-link.active:focus,
 .nav-link:hover,
 .nav-link.active:hover {
-  color: black; /* Cor do texto ao passar o mouse ou focar */
-  background-color:  #6c757d; /* Cor de fundo quando o link está ativo */
-  border: 1px solid gray; /* Bordas ao passar o mouse ou focar */
-  border-radius: 4px; /* Bordas arredondadas */
+  color: black;
+  /* Cor do texto ao passar o mouse ou focar */
+  background-color: #6c757d;
+  /* Cor de fundo quando o link está ativo */
+  border: 1px solid gray;
+  /* Bordas ao passar o mouse ou focar */
+  border-radius: 4px;
+  /* Bordas arredondadas */
+}
+
+.mobile-image {
+  display: none;
+  /* Oculta a imagem mobile por padrão */
+}
+
+/* Media query para telas menores (mobile) */
+@media (max-width: 767px) {
+  .desktop-image {
+    display: none;
+    /* Oculta a imagem desktop em telas menores */
+  }
+
+  .mobile-image {
+    display: block;
+    /* Exibe a imagem mobile em telas menores */
+  }
 }

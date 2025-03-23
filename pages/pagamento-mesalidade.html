@@ -1,454 +1,411 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../style/style.css" />
-    <style>
-      #results {
-        margin-top: 20px;
-      }
 
-      #results section {
-        margin-bottom: 20px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style/style.css" />
+  <link rel="stylesheet" href="./style/theme.css" />
 
+  <style>
+    #results {
+      margin-top: 20px;
+    }
+
+    #results section {
+      margin-bottom: 20px;
+    }
+
+    #results h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #0d6efd;
+    }
+
+    #results ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    #results li {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      position: relative;
+    }
+
+    #results li p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .data-field {
+      font-weight: bold;
+    }
+
+    @media (max-width: 767.98px) {
       #results h3 {
-        margin-bottom: 10px;
-        font-size: 1.5rem;
-        color: #0d6efd;
-      }
-
-      #results ul {
-        list-style-type: none;
-        padding-left: 0;
+        font-size: 1.25rem;
       }
 
       #results li {
-        background-color: #f8f9fa;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        padding: 15px;
-        margin-bottom: 10px;
-        word-wrap: break-word;
-        position: relative;
+        font-size: 0.875rem;
       }
+    }
 
-      #results li p {
-        margin: 0;
-        font-size: 1rem;
-      }
+    #btn-atl {
+      width: 140px;
+      height: 30px;
+      font-size: 13px;
+      margin: 122px 430px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+    }
 
-      .data-field {
-        font-weight: bold;
-      }
-
-      @media (max-width: 767.98px) {
-        #results h3 {
-          font-size: 1.25rem;
-        }
-
-        #results li {
-          font-size: 0.875rem;
-        }
-      }
-
+    @media (max-width: 767.98px) {
       #btn-atl {
-        width: 140px;
+        margin: 119px 34px;
+        width: 100px;
         height: 30px;
-        font-size: 13px;
-        margin: 122px 430px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        border-radius: 4px;
-        background-color: #007bff;
-        color: white;
-        border: none;
+        font-size: 10px;
+        font-weight: 700;
       }
-      @media (max-width: 767.98px) {
-        #btn-atl {
-          margin: 119px 34px;
-          width: 100px;
-          height: 30px;
-          font-size: 10px;
-          font-weight: 700;
-        }
-      }
-    </style>
+    }
+  </style>
 
-    <title>Consultar</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#" style="color: #495057">One Park</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            aria-label="Toggle navigation"
-          ></button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html">Página Inicial</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./avulso.html">Avulso</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./clientes.html">Cadastrar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./busca-avancada.html"
-                  >Gerenciamento</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./comprovante.html">Comprovantes</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+  <title>Consultar</title>
+</head>
 
-    <main
-      class="d-flex justify-content-center align-items-center"
-      style="min-height: 100vh"
-    >
-      <div id="consultar" class="container">
-        <div class="row">
-          <h1 id="cts">Consultar Cliente</h1>
-          <div class="col-12 col-md-6 input-group mb-3">
-            <input
-              type="text"
-              id="cliente"
-              class="form-control"
-              placeholder="Cliente"
-              autocomplete="off"
-            />
-            <img src="../img/clientes.png" alt="cliente" />
-          </div>
-          <div class="col-12 col-md-6 input-group mb-3">
-            <input
-              type="text"
-              id="tel"
-              class="form-control"
-              placeholder="Telefone"
-              autocomplete="off"
-            />
-            <img src="../img/whatsapp.png" alt="telefone" />
-          </div>
-          <div class="col-12 col-md-6 input-group mb-3">
-            <input
-              type="text"
-              id="placa"
-              class="form-control"
-              placeholder="Placa"
-              autocomplete="off"
-            />
-            <img src="../img/placa-de-carro.png" alt="placa" />
-          </div>
-          <div class="col-12 d-flex justify-content-center mb-3">
-            <button
-              type="button"
-              class="btn btn-primary"
-              onclick="searchClient()"
-            >
-              Buscar
-            </button>
-          </div>
-          <div class="col-12">
-            <div id="results">
-              <!-- Resultados serão exibidos aqui -->
-            </div>
-          </div>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">Leap In Technology ©</a>
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Página Inicial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./avulso.html">Avulso</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./clientes.html">Cadastrar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./busca-avancada.html">Gerenciamento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./comprovante.html">Comprovantes</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </main>
-    <!-- Modal para Mensagem de Atualização -->
-    <div
-      class="modal fade"
-      id="mensalidadeModal"
-      tabindex="-1"
-      aria-labelledby="mensalidadeModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="mensalidadeModalLabel">
-              Atualização de Mensalidade
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">Mensalidade atualizada com sucesso!</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              onclick="redirectToCaixaPage()"
-            >
-              Ir para Caixa
-            </button>
+    </nav>
+  </header>
+
+  <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh">
+    <div id="consultar" class="container">
+      <div class="row">
+        <h1 id="cts">Consultar Cliente</h1>
+        <div class="col-12 col-md-6 input-group mb-3">
+          <input type="text" id="cliente" class="form-control" placeholder="Cliente" autocomplete="off" />
+          <img src="../img/clientes.png" alt="cliente" />
+        </div>
+        <div class="col-12 col-md-6 input-group mb-3">
+          <input type="text" id="tel" class="form-control" placeholder="Telefone" autocomplete="off" />
+          <img src="../img/whatsapp.png" alt="telefone" />
+        </div>
+        <div class="col-12 col-md-6 input-group mb-3">
+          <input type="text" id="placa" class="form-control" placeholder="Placa" autocomplete="off" />
+          <img src="../img/placa-de-carro.png" alt="placa" />
+        </div>
+        <div class="col-12 d-flex justify-content-center mb-3">
+          <button type="button" class="btn btn-primary" onclick="searchClient()">
+            Buscar
+          </button>
+        </div>
+        <div class="col-12">
+          <div id="results">
+            <!-- Resultados serão exibidos aqui -->
           </div>
         </div>
       </div>
     </div>
-
-    <footer class="bg-light text-center py-3">
-      <div class="container">
-        <p class="mb-0">© 2024 One Park. Todos os direitos reservados.</p>
+  </main>
+  <!-- Modal para Mensagem de Atualização -->
+  <div class="modal fade" id="mensalidadeModal" tabindex="-1" aria-labelledby="mensalidadeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mensalidadeModalLabel">
+            Atualização de Mensalidade
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Mensalidade atualizada com sucesso!</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="redirectToCaixaPage()">
+            Ir para Caixa
+          </button>
+        </div>
       </div>
-    </footer>
+    </div>
+  </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const inputsToUppercase = document.querySelectorAll("#cliente, #placa");
+  <footer class="bg-light text-center py-3">
+    <div class="container">
+      <p class="mb-0">© 2025 Leap In Technology, Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
 
-        inputsToUppercase.forEach((input) => {
-          input.addEventListener("input", function () {
-            this.value = this.value.toUpperCase();
-          });
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="../script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const inputsToUppercase = document.querySelectorAll("#cliente, #placa");
+
+      inputsToUppercase.forEach((input) => {
+        input.addEventListener("input", function () {
+          this.value = this.value.toUpperCase();
         });
       });
+    });
 
-      function searchClient() {
-        const cliente = document
-          .getElementById("cliente")
-          .value.trim()
-          .toUpperCase();
-        const tel = document.getElementById("tel").value.trim();
-        const placa = document
-          .getElementById("placa")
-          .value.trim()
-          .toUpperCase();
+    function searchClient() {
+      const cliente = document
+        .getElementById("cliente")
+        .value.trim()
+        .toUpperCase();
+      const tel = document.getElementById("tel").value.trim();
+      const placa = document
+        .getElementById("placa")
+        .value.trim()
+        .toUpperCase();
 
-        function fetchData(url) {
-          return fetch(url)
-            .then((response) => response.json())
-            .then((data) => data)
-            .catch((error) => {
-              console.error("Erro:", error);
-              return [];
-            });
+      function fetchData(url) {
+        return fetch(url)
+          .then((response) => response.json())
+          .then((data) => data)
+          .catch((error) => {
+            console.error("Erro:", error);
+            return [];
+          });
+      }
+
+      fetchData(
+        "https://oneparkestacionamento.pythonanywhere.com/clientes"
+      ).then((clientes) => {
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = "";
+
+        function filterData(data) {
+          return data.filter((item) => {
+            return (
+              (cliente === "" || item.cliente.includes(cliente)) &&
+              (tel === "" || item.telefone.includes(tel)) &&
+              (placa === "" || item.placa.includes(placa))
+            );
+          });
         }
 
-        fetchData(
-          "https://oneparkestacionamento.pythonanywhere.com/clientes"
-        ).then((clientes) => {
-          const resultsDiv = document.getElementById("results");
-          resultsDiv.innerHTML = "";
+        function createList(title, items) {
+          const section = document.createElement("section");
+          const h2 = document.createElement("h3");
+          h2.textContent = title;
+          section.appendChild(h2);
 
-          function filterData(data) {
-            return data.filter((item) => {
-              return (
-                (cliente === "" || item.cliente.includes(cliente)) &&
-                (tel === "" || item.telefone.includes(tel)) &&
-                (placa === "" || item.placa.includes(placa))
-              );
-            });
-          }
-
-          function createList(title, items) {
-            const section = document.createElement("section");
-            const h2 = document.createElement("h3");
-            h2.textContent = title;
-            section.appendChild(h2);
-
-            if (items.length === 0) {
-              section.innerHTML += "<p>Nenhum resultado encontrado.</p>";
-              return section;
-            }
-
-            const list = document.createElement("ul");
-            items.forEach((item) => {
-              // Verifica se a mensalidade está paga e atualiza o campo mensalista
-              if (item.mensalidade_pago) {
-                item.mensalista = item.proxima_mensalidade_data;
-              }
-
-              const li = document.createElement("li");
-              li.innerHTML = `
-                          <p><span class="data-field">Cliente:</span> ${
-                            item.cliente || "Não disponível"
-                          }</p>
-                          <p><span class="data-field">Telefone:</span> ${
-                            item.telefone || "Não disponível"
-                          }</p>
-                          <p><span class="data-field">Veículo:</span> ${
-                            item.veiculo || "Não disponível"
-                          }</p>
-                          <p><span class="data-field">Placa:</span> ${
-                            item.placa || "Não disponível"
-                          }</p>
-                          <p><span class="data-field">Mensalista:</span> ${
-                            item.mensalista || "Não disponível"
-                          }</p>
-                          <p><span class="data-field">Mensalidade:</span> ${
-                            item.mensalidade || "Não disponível"
-                          }</p>
-                          
-                          <button id="btn-atl" onclick="updatePaymentStatus(${
-                            item.id
-                          }, ${!item.mensalidade_pago}, '${
-                item.proxima_mensalidade_data
-              }')">Atualizar Pagamento</button>
-                      `;
-
-              list.appendChild(li);
-            });
-
-            section.appendChild(list);
+          if (items.length === 0) {
+            section.innerHTML += "<p>Nenhum resultado encontrado.</p>";
             return section;
           }
 
-          const filteredClientes = filterData(clientes);
-
-          resultsDiv.appendChild(createList("Clientes", filteredClientes));
-        });
-      }
-      function updatePaymentStatus(id, status, proximaMensalidadeAtual) {
-        // Verifica o valor recebido para proximaMensalidadeAtual
-        console.log("Data atual recebida:", proximaMensalidadeAtual);
-
-        // Converte a data recebida para um formato aceito pelo JavaScript
-        let [day, month, year] = proximaMensalidadeAtual.split("/");
-        year = `20${year}`; // Ajusta o ano para o formato de quatro dígitos
-        let nextPaymentDate = new Date(`${year}-${month}-${day}`);
-
-        // Verifica se a conversão da data foi bem-sucedida
-        console.log("Data convertida:", nextPaymentDate.toISOString());
-
-        // Calcula 29 dias após a data fornecida
-        nextPaymentDate.setDate(nextPaymentDate.getDate() + 29);
-
-        // Formata a data para o formato dd/mm/yy
-        const formattedDate = `${("0" + nextPaymentDate.getDate()).slice(
-          -2
-        )}/${("0" + (nextPaymentDate.getMonth() + 1)).slice(
-          -2
-        )}/${nextPaymentDate.getFullYear().toString().slice(-2)}`;
-
-        // Log dos dados que serão enviados
-        console.log("Dados a serem enviados para atualizar status:", {
-          mensalidade_pago: status ? 1 : 0,
-          proxima_mensalidade_data: formattedDate,
-          mensalista: formattedDate,
-        });
-
-        // Envia a requisição PUT para atualizar o status de pagamento e a próxima mensalidade
-        fetch(
-          `https://oneparkestacionamento.pythonanywhere.com/atualizar-status-pagamento/${id}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              mensalidade_pago: status ? 1 : 0,
-              proxima_mensalidade_data: formattedDate,
-              mensalista: formattedDate,
-            }),
-          }
-        )
-          .then((response) => {
-            if (!response.ok) {
-              return response.json().then((data) => {
-                throw new Error(data.error);
-              });
+          const list = document.createElement("ul");
+          items.forEach((item) => {
+            // Verifica se a mensalidade está paga e atualiza o campo mensalista
+            if (item.mensalidade_pago) {
+              item.mensalista = item.proxima_mensalidade_data;
             }
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data.message);
-            // Após o sucesso da atualização, enviar a requisição POST para o caixa
-            sendPostToCaixa(id, "MENSALIDADE", 200.0); // Ajuste os parâmetros conforme necessário
-          })
-          .catch((error) => {
-            console.error(
-              "Erro ao atualizar status de pagamento:",
-              error.message
-            );
+
+            const li = document.createElement("li");
+            li.innerHTML = `
+                          <p><span class="data-field">Cliente:</span> ${item.cliente || "Não disponível"
+              }</p>
+                          <p><span class="data-field">Telefone:</span> ${item.telefone || "Não disponível"
+              }</p>
+                          <p><span class="data-field">Veículo:</span> ${item.veiculo || "Não disponível"
+              }</p>
+                          <p><span class="data-field">Placa:</span> ${item.placa || "Não disponível"
+              }</p>
+                          <p><span class="data-field">Mensalista:</span> ${item.mensalista || "Não disponível"
+              }</p>
+                          <p><span class="data-field">Mensalidade:</span> ${item.mensalidade || "Não disponível"
+              }</p>
+                          
+                          <button id="btn-atl" onclick="updatePaymentStatus(${item.id
+              }, ${!item.mensalidade_pago}, '${item.proxima_mensalidade_data
+              }')">Atualizar Pagamento</button>
+                      `;
+
+            list.appendChild(li);
           });
-      }
 
-      function sendPostToCaixa(id, descricao, valor) {
-        // Obtém a data atual
-        const today = new Date();
+          section.appendChild(list);
+          return section;
+        }
 
-        // Formata a data para 'dd/mm/yyyy'
-        const formattedDate = `${("0" + today.getDate()).slice(-2)}/${(
-          "0" +
-          (today.getMonth() + 1)
-        ).slice(-2)}/${today.getFullYear()}`;
+        const filteredClientes = filterData(clientes);
 
-        // Log da data formatada para depuração
-        console.log("Data formatada para envio ao caixa:", formattedDate);
+        resultsDiv.appendChild(createList("Clientes", filteredClientes));
+      });
+    }
+    function updatePaymentStatus(id, status, proximaMensalidadeAtual) {
+      // Verifica o valor recebido para proximaMensalidadeAtual
+      console.log("Data atual recebida:", proximaMensalidadeAtual);
 
-        // Cria o objeto com os dados a serem enviados
-        const data = {
-          data: formattedDate,
-          descricao: descricao,
-          id: id,
-          valor: valor,
-        };
+      // Converte a data recebida para um formato aceito pelo JavaScript
+      let [day, month, year] = proximaMensalidadeAtual.split("/");
+      year = `20${year}`; // Ajusta o ano para o formato de quatro dígitos
+      let nextPaymentDate = new Date(`${year}-${month}-${day}`);
 
-        // Log dos dados que serão enviados para depuração
-        console.log("Dados a serem enviados para o caixa:", data);
+      // Verifica se a conversão da data foi bem-sucedida
+      console.log("Data convertida:", nextPaymentDate.toISOString());
 
-        // Envia a requisição POST para o endpoint do caixa
-        fetch("https://oneparkestacionamento.pythonanywhere.com/caixa", {
-          method: "POST",
+      // Calcula 29 dias após a data fornecida
+      nextPaymentDate.setDate(nextPaymentDate.getDate() + 29);
+
+      // Formata a data para o formato dd/mm/yy
+      const formattedDate = `${("0" + nextPaymentDate.getDate()).slice(
+        -2
+      )}/${("0" + (nextPaymentDate.getMonth() + 1)).slice(
+        -2
+      )}/${nextPaymentDate.getFullYear().toString().slice(-2)}`;
+
+      // Log dos dados que serão enviados
+      console.log("Dados a serem enviados para atualizar status:", {
+        mensalidade_pago: status ? 1 : 0,
+        proxima_mensalidade_data: formattedDate,
+        mensalista: formattedDate,
+      });
+
+      // Envia a requisição PUT para atualizar o status de pagamento e a próxima mensalidade
+      fetch(
+        `https://oneparkestacionamento.pythonanywhere.com/atualizar-status-pagamento/${id}`,
+        {
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify({
+            mensalidade_pago: status ? 1 : 0,
+            proxima_mensalidade_data: formattedDate,
+            mensalista: formattedDate,
+          }),
+        }
+      )
+        .then((response) => {
+          if (!response.ok) {
+            return response.json().then((data) => {
+              throw new Error(data.error);
+            });
+          }
+          return response.json();
         })
-          .then((response) => {
-            if (!response.ok) {
-              return response.json().then((data) => {
-                throw new Error(data.error);
-              });
-            }
-            return response.json();
-          })
-          .then((data) => {
-            console.log("Requisição ao caixa realizada com sucesso:", data);
-            // Exibir o modal após a requisição bem-sucedida
-            var mensalidadeModal = new bootstrap.Modal(
-              document.getElementById("mensalidadeModal")
-            );
-            mensalidadeModal.show();
-          })
-          .catch((error) => {
-            console.error("Erro ao enviar requisição ao caixa:", error.message);
-          });
-      }
+        .then((data) => {
+          console.log(data.message);
+          // Após o sucesso da atualização, enviar a requisição POST para o caixa
+          sendPostToCaixa(id, "MENSALIDADE", 200.0); // Ajuste os parâmetros conforme necessário
+        })
+        .catch((error) => {
+          console.error(
+            "Erro ao atualizar status de pagamento:",
+            error.message
+          );
+        });
+    }
 
-      // Função para redirecionar para a página caixa.html
-      function redirectToCaixaPage() {
-        window.location.href = "./caixa.html";
-      }
-    </script>
-  </body>
+    function sendPostToCaixa(id, descricao, valor) {
+      // Obtém a data atual
+      const today = new Date();
+
+      // Formata a data para 'dd/mm/yyyy'
+      const formattedDate = `${("0" + today.getDate()).slice(-2)}/${(
+        "0" +
+        (today.getMonth() + 1)
+      ).slice(-2)}/${today.getFullYear()}`;
+
+      // Log da data formatada para depuração
+      console.log("Data formatada para envio ao caixa:", formattedDate);
+
+      // Cria o objeto com os dados a serem enviados
+      const data = {
+        data: formattedDate,
+        descricao: descricao,
+        id: id,
+        valor: valor,
+      };
+
+      // Log dos dados que serão enviados para depuração
+      console.log("Dados a serem enviados para o caixa:", data);
+
+      // Envia a requisição POST para o endpoint do caixa
+      fetch("https://oneparkestacionamento.pythonanywhere.com/caixa", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            return response.json().then((data) => {
+              throw new Error(data.error);
+            });
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Requisição ao caixa realizada com sucesso:", data);
+          // Exibir o modal após a requisição bem-sucedida
+          var mensalidadeModal = new bootstrap.Modal(
+            document.getElementById("mensalidadeModal")
+          );
+          mensalidadeModal.show();
+        })
+        .catch((error) => {
+          console.error("Erro ao enviar requisição ao caixa:", error.message);
+        });
+    }
+
+    // Função para redirecionar para a página caixa.html
+    function redirectToCaixaPage() {
+      window.location.href = "./caixa.html";
+    }
+  </script>
+</body>
+
 </html>

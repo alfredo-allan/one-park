@@ -6,11 +6,11 @@
             "use": "@vercel/static"
         },
         {
-            "src": "css/*.css",
+            "src": "style/*.css",
             "use": "@vercel/static"
         },
         {
-            "src": "js/*.js",
+            "src": "*.js",
             "use": "@vercel/static"
         },
         {
@@ -19,6 +19,14 @@
         },
         {
             "src": "fonts/*",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "media/*",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "servicos.json",
             "use": "@vercel/static"
         }
     ]
